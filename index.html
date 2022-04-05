@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>MES</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="taskbar">
+        <input type="checkbox" id="in">
+        <div class="con">
+            <section class="f-item stats">
+                <h3 class="light-title">Opções</h3>
+                <nav>
+                  <button onclick="cadastrarProduto()" id="cadastro"><span class="icon"></span>Cadastrar Produto</button>
+                  <button onclick="venderProduto()" id="vender"><span class="icon"></span>Vender Produto</button>
+                  <button onclick="atualizarEstoque()" id="estoque"><span class="icon"></span>Atualizar Estoque</button>
+                  <button onclick="pesquisarProduto()" id="pesquisa"><span class="icon"></span>Pesquisar Produto</button>
+                </nav>
+              </section>
+        </div>
+        <label for="in" class="start-btn">
+            <div class="win-logo"></div>
+        </label>
+    </div>
+</body>
+</html>

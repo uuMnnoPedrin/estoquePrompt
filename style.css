@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    min-height: 100%;
+}
+
+body{
+    background: url(bg.png) center;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-color: #152238;
+}
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background:#1f1f1f;
+}
+
+.con {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    min-height: 80vh;
+    padding: 10px 15px;
+    background: rgba(31, 31, 31, 0.84);
+    display: flex;
+    box-shadow: 0 0 3px #333;
+    overflow: hidden;
+}
+
+.stats {
+    flex: 2;
+}
+
+nav {
+    margin-right: 15px;
+}
+
+nav button{
+    display: block;
+    background: none;
+    text-align: start;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    padding: 10px 2px;
+    color: white;
+    font-size: 0.7em;
+}
+
+nav button:hover{
+    background: rgba(134, 128, 128, 0.32);
+}
+
+.icon {
+	display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: white;
+  margin-right: 15px;
+   vertical-align: middle;
+}
+
+.light-title {
+    font-size: 0.8em;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.83);
+}
+
+/* Esconder Opções */
+
+.con {
+    opacity: 0;
+      transform: translateY(5%);
+      transition: transform .3s ease;
+      z-index: -1;
+      pointer-events: none;
+}
+
+.taskbar .con {
+    bottom: 100%;
+}
+
+.win-logo {
+  height: 100px;
+  width: 150px;
+  background: linear-gradient(to bottom, transparent 50%, #333 50%, #333 52%, transparent 52%, transparent 100%),linear-gradient(to right, transparent 50%, #333 50%, #333 52%, transparent 52%, transparent 100%),white;
+  transform-origin: 50% 50%;
+  transform: rotateY(-45deg);
+} 
+
+.start-btn {
+    display: block;
+	width: 50px;
+    padding: 5px;
+}
+
+
+.start-btn .win-logo {
+  height: 25px;
+  width: 100%;
+}
+.start-btn:hover {
+    background: rgba(134, 128, 128, 0.32);
+}
+
+.start-btn:hover > .win-logo {
+  background-color: #4ac5e0;
+}
+
+#in {
+  position: absolute;
+  opacity: 0;
+}
+
+#in:checked ~ .con {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0);
+}
+
+#in:checked + .con + .start-btn {
+      background: rgba(134, 128, 128, 0.32);
+}
+
+#in:checked ~ .con > .tiles-con {
+  transform: translate(0);
+}
